@@ -6,10 +6,9 @@
 
 ## 사용 버전
 
-`Java` 
-- 17.0.10
-`Eclipse IDE`
-- Version: 2022-03 (4.23.0)
+`Java` Version: 17.0.10
+
+`Eclipse IDE` Version: 2022-03 (4.23.0)
 
 ## 공부 시작 날짜
 
