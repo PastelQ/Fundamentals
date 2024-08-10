@@ -5,7 +5,8 @@ public class IntArray {
 
 	public static void main(String[] args) {
 		
-		// 배열의 선언 -> int 형 변수를 5개 모아 만든 배열 생성
+		// int 타입의 배열을 참조할 수 있는 변수 a 선언  -> 
+		// int 형 변수를 5개 모아 만든 배열 생성하여 변수 a에 할당
 		int[] a = new int[5]; 
 		
 		a[1] = 37;			// 인덱스 1에 37 대입
