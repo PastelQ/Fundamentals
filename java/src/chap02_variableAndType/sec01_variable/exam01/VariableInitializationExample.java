@@ -1,4 +1,4 @@
-package chap02.sec01.exam01;
+package chap02_variableAndType.sec01_variable.exam01;
 
 // 변수 초기화
 public class VariableInitializationExample {

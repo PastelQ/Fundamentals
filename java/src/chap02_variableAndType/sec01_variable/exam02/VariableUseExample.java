@@ -1,4 +1,4 @@
-package chap02.sec01.exam02;
+package chap02_variableAndType.sec01_variable.exam02;
 
 // 변수 사용
 public class VariableUseExample {

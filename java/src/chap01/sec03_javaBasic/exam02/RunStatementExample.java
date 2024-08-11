@@ -1,4 +1,4 @@
-package chap01.sec03.exam02;
+package chap01.sec03_javaBasic.exam02;
 
 public class RunStatementExample {
 
