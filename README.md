@@ -1,4 +1,6 @@
-![image](https://github.com/user-attachments/assets/6f52ad30-753c-4354-8861-15fd920d1c30)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/6f52ad30-753c-4354-8861-15fd920d1c30" alt="image description">
+</div>
 
 # Do it! 자료구조와 함께 배우는 알고리즘 입문(자바편)
 
