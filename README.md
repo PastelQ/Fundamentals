@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/d1971216-20e1-4003-bc2d-c328902e6198" alt="image description">
+  <img src="https://github.com/user-attachments/assets/d33ca1e4-3a17-45e6-8048-5be02a12be77" alt="image description">
 </div>
 
-# [Udemy] The Complete Java Development Bootcamp
+# 혼자 공부하는 자바
 
-해당 프로젝트는 `The Complete Java Development Bootcamp` 강의를 따라가며 실습한 코드 수록.
+해당 프로젝트는 `혼자 공부하는 자바` 책을 공부하고 각 장의 내용을 따라가며 실습한 코드 수록.
 
 ## 사용 버전
 
