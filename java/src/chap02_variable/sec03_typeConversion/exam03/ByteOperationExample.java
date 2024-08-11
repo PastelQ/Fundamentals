@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec03_typeConversion.exam03;
+package chap02_variable.sec03_typeConversion.exam03;
 
 // 정수 타입의 연산 : 정수 타입 중 int 타입보다 작은 byte, short 타입의 경우 
 // 산술 연산식에서 피연산자로 사용되면 int 타입으로 자동 타입 변환되어 연산을 수행함

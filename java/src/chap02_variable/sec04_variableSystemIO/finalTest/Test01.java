@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec04_variableSystemIO.finalTest;
+package chap02_variable.sec04_variableSystemIO.finalTest;
 
 // 다음과 같이 출력되도록 코드 작성
 /* 출력 내용

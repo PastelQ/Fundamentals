@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec02_variableType.exam01;
+package chap02_variable.sec02_variableType.exam01;
 
 // 정수 리터럴
 public class IntegerLiteralExample {	

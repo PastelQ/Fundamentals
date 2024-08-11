@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec04_variableSystemIO.exam04;
+package chap02_variable.sec04_variableSystemIO.exam04;
 
 // 'q'를 입력하여 반복 종료시키는 키코드 프로그램
 public class QStipExample {

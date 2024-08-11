@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec02_variableType.exam02;
+package chap02_variable.sec02_variableType.exam02;
 
 // byte 타입 변수
 public class ByteExample {

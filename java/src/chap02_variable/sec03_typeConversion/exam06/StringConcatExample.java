@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec03_typeConversion.exam06;
+package chap02_variable.sec03_typeConversion.exam06;
 
 // 문자열 결합 연산 : + 연산자는 합, 연결 2가지의 기능을 가지고 있음(문자열의 경우 연결)
 // 2개의 피연산자가 있을 때 하나라도 문자열일 경우에는 나머지 피연산자도 문자열로 자동 변환되어 결합 연산 수행

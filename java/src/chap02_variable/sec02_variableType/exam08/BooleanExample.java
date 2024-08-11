@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec02_variableType.exam08;
+package chap02_variable.sec02_variableType.exam08;
 
 // boolean 타입(논리 타입)
 // 참과 거지슬 의미하는 논리 리터럴로 true, false 사용

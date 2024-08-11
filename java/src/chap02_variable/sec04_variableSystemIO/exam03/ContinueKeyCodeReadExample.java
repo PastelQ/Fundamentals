@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec04_variableSystemIO.exam03;
+package chap02_variable.sec04_variableSystemIO.exam03;
 
 // 입력된 키의 갯수와 상관 없이 키코드 읽기
 public class ContinueKeyCodeReadExample {

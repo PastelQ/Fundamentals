@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec02_variableType.exam04;
+package chap02_variable.sec02_variableType.exam04;
 
 // char 타입 변수
 // 문자리터럴 : 1개의 문자를 작은 따옴표로 감싼 것 -> 유니코드로 변환되어 저장됨

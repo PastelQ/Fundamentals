@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec04_variableSystemIO.exam01;
+package chap02_variable.sec04_variableSystemIO.exam01;
 
 // printf() 메서드 사용 방법
 // printf("형식 문자열", 값1, 값2... 값n)

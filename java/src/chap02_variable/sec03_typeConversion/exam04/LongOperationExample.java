@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec03_typeConversion.exam04;
+package chap02_variable.sec03_typeConversion.exam04;
 
 // 정수 타입의 연산(int 타입보다 허용 범위가 더 클 경우)
 // int 타입보다 허용 범위가 더 큰 long 타입이 피연산자로 사용될 경우 다른 피연산자는 이전과 마찬가지로

@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec02_variableType.exam06;
+package chap02_variable.sec02_variableType.exam06;
 
 // 이스케이프 문자 출력
 // 문자열 내부에 역슬래시(\)를 사용할 수 있는데, 문자열 내부에 특정 문자를 포함할 수 있음

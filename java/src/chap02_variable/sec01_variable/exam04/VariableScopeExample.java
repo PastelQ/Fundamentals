@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec01_variable.exam04;
+package chap02_variable.sec01_variable.exam04;
 
 // 변수의 사용 범위
 public class VariableScopeExample {

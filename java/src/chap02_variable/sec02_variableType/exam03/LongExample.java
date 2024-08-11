@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec02_variableType.exam03;
+package chap02_variable.sec02_variableType.exam03;
 
 // long 타입 변수
 public class LongExample {

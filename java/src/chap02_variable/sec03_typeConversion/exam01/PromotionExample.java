@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec03_typeConversion.exam01;
+package chap02_variable.sec03_typeConversion.exam01;
 
 // 자동 타입 변환이 발생하는 다양한 코드 예시
 public class PromotionExample {

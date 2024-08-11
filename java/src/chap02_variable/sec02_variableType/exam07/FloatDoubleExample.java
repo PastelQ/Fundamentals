@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec02_variableType.exam07;
+package chap02_variable.sec02_variableType.exam07;
 
 // float와 double 타입 (실수 타입)
 public class FloatDoubleExample {
