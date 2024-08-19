@@ -1,4 +1,4 @@
-package chap06_class.sec03_constructor.exam03;
+package chap06_class.sec03_constructor.exam04;
 
 // 오버로딩 실습 / 객체 생성 시 생성자 선택
 public class CarExample {
