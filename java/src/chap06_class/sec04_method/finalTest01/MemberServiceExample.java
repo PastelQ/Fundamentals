@@ -1,6 +1,6 @@
 package chap06_class.sec04_method.finalTest01;
 
-// MemeberService.java 객체를 생성하여 메서드 호출 연습
+// MemeberService.java 객체(인스턴스)를 생성하여 메서드 호출 연습
 public class MemberServiceExample {
 
 	public static void main(String[] args) {
@@ -14,7 +14,5 @@ public class MemberServiceExample {
 		} else {
 			System.out.println("ID 또는 Password가 올바르지 않습니다.");
 		}
-		
 	}
-	
 }
