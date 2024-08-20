@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec04_variableSystemIO.exam02;
+package chap02_variableAndType.sec04_variableSystemIO.exam02_keyCode;
 
 // 입력된 키코드를 변수에 저장
 // 입력 스트림 System.in의 read() 자바의 표준 입력을 읽어 옴

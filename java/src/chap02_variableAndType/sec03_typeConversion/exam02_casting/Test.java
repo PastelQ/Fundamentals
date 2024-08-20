@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec03_typeConversion.exam02;
+package chap02_variableAndType.sec03_typeConversion.exam02_casting;
 
 public class Test {
 	public static void main(String[] args) {

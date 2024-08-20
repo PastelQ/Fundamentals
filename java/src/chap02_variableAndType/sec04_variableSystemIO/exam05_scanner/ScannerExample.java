@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec04_variableSystemIO.exam05;
+package chap02_variableAndType.sec04_variableSystemIO.exam05_scanner;
 
 import java.util.Scanner;
 

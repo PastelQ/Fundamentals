@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec03_typeConversion.exam07;
+package chap02_variableAndType.sec03_typeConversion.exam07_primitiveAndString;
 
 // 기본 타입과 문자열 간의 변환
 // 문자열  -> 기본타입 변환 : 변환타입.parse변환타입(변수명);

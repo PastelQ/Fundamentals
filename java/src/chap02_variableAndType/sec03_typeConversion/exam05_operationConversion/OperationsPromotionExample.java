@@ -1,4 +1,4 @@
-package chap02_variableAndType.sec03_typeConversion.exam05;
+package chap02_variableAndType.sec03_typeConversion.exam05_operationConversion;
 
 // 연산식에서 자동 타입 변환
 public class OperationsPromotionExample {
