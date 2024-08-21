@@ -1,4 +1,4 @@
-package chap07_inheritance.sec01_inheritance.exam04_overriding;
+package chap07_inheritance.sec01_inheritance.exam03_overriding;
 
 // Calculator를 상속 받는 하위 클래스
 public class Computer extends Calculator{

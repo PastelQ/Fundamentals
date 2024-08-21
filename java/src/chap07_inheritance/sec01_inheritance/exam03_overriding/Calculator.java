@@ -1,4 +1,4 @@
-package chap07_inheritance.sec01_inheritance.exam04_overriding;
+package chap07_inheritance.sec01_inheritance.exam03_overriding;
 
 // Overriding (메서드 재정의) : 상속 받은 부모 클래스의 메서드를 다시 정의
 // 1. 부모의 메서드와 동일한 시그니처(리턴타입, 메소드 이름, 매개 변수 목록)을 가져옴

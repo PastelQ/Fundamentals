@@ -1,4 +1,4 @@
-package chap07_inheritance.sec01_inheritance.exam04_overriding;
+package chap07_inheritance.sec01_inheritance.exam03_overriding;
 
 // 메서드 재정의(Overriding) Test
 public class ComputerExample {
