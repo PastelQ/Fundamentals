@@ -5,7 +5,7 @@
 
 # Spring Boot 3 & Spring Framework 6 Master
 
-해당 프로젝트는 `Spring Boot 3 & Spring Framework 6 Master` 영상 부트캠프를 공부하고 각 장의 내용을 따라가며 실습한 코드 수록.
+해당 프로젝트는 `Spring Boot 3 & Spring Framework 6 Master` 영상 부트캠프를 따라가며 실습한 코드 수록.
 
 ## 사용 버전
 
