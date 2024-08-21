@@ -5,7 +5,7 @@ import com.in28minutes.learnspringframework.game.MarioGame;
 import com.in28minutes.learnspringframework.game.PacmanGame;
 import com.in28minutes.learnspringframework.game.SuperContraGame;
 
-public class AppGamingBasic {
+public class App01GamingBasic {
 	// 실행 메서드
 	public static void main(String[] args) {
 		
