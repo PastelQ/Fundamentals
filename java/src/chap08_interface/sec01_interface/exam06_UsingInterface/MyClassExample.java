@@ -1,7 +1,7 @@
-package chap08_interface_sec01_interface.exam06_UsingInterface;
+package chap08_interface.sec01_interface.exam06_UsingInterface;
 
-import chap08_interface_sec01_interface.exam04_implement.Audio;
-import chap08_interface_sec01_interface.exam04_implement.Television;
+import chap08_interface.sec01_interface.exam04_implement.Audio;
+import chap08_interface.sec01_interface.exam04_implement.Television;
 
 // 인터페이스 사용 
 // 클래스 선언 시 인터페이스는 "필드, 생성자(or메서드)의 매개변수, 로컬변수로 선언 가능

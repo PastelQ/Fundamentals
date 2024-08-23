@@ -1,4 +1,4 @@
-package chap08_interface_sec01_interface.finalTest;
+package chap08_interface.sec01_interface.finalTest;
 
 // Soundable Interface를 구현하는 클래스를 사용하는 실행 클래스
 public class SoundableExample {

@@ -1,6 +1,6 @@
-package chap08_interface_sec01_interface.exam05_multipleImplementation;
+package chap08_interface.sec01_interface.exam05_multipleImplementation;
 
-import chap08_interface_sec01_interface.exam03_abstractMethod.RemoteControl;
+import chap08_interface.sec01_interface.exam03_abstractMethod.RemoteControl;
 
 // 다중 인터페이스를 구현한 클래스의 실행 클래스
 public class SmartTelevisionExample {

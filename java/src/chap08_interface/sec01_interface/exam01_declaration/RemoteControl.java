@@ -1,4 +1,4 @@
-package chap08_interface_sec01_interface.exam01_declaration;
+package chap08_interface.sec01_interface.exam01_declaration;
 
 // Interface : 객체의 사용 방법을 정의한 타입 (다중 상속)
 // 하나의 객체가 아닌 여러 객체들과 사용이 가능하여 어떤 객체를 사용하느냐에 따라 실행 내용, 리턴값이 달라짐

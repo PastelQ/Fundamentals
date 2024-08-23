@@ -1,6 +1,6 @@
-package chap08_interface_sec01_interface.exam05_multipleImplementation;
+package chap08_interface.sec01_interface.exam05_multipleImplementation;
 
-import chap08_interface_sec01_interface.exam03_abstractMethod.RemoteControl;
+import chap08_interface.sec01_interface.exam03_abstractMethod.RemoteControl;
 
 // 다중 인터페이스 구현 클래스 : RemoteControl, Searchable 인터페이스의 추상메서드 모두 구현 필요
 public class SmartTelevision implements RemoteControl, Searchable {

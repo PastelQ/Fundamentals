@@ -1,4 +1,4 @@
-package chap08_interface_sec01_interface.exam03_abstractMethod;
+package chap08_interface.sec01_interface.exam03_abstractMethod;
 
 // 추상 메서드 선언 
 // 인터페이스를 통해 호출된 메서드는 최종적으로 객체에서 실행
