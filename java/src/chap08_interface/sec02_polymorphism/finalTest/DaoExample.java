@@ -1,4 +1,4 @@
-package chap08_interface.sec02_polymorphism_finalTest;
+package chap08_interface.sec02_polymorphism.finalTest;
 
 // 실행 클래스에서 dbWork()를 호출할 때 OracleDao, MySqlDao 객체를 매개값으로 주고 호출
 // 두 매개값으로 받기 위해 DataAccessObject 타입의 매개 변수를 가지고 있음.

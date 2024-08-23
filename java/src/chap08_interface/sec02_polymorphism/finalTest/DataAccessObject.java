@@ -1,4 +1,4 @@
-package chap08_interface.sec02_polymorphism_finalTest;
+package chap08_interface.sec02_polymorphism.finalTest;
 
 // DaoExample에서 사용되는 인터페이스 
 public interface DataAccessObject {

@@ -1,4 +1,4 @@
-package chap08_interface.sec02_polymorphism_finalTest;
+package chap08_interface.sec02_polymorphism.finalTest;
 
 // DataAccessObject Interface 구현 클래스
 public class MySqlDao implements DataAccessObject {
