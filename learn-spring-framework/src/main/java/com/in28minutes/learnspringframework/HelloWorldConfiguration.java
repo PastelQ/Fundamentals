@@ -1,7 +1,9 @@
 package com.in28minutes.learnspringframework;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 // record : 불변 데이터 객체를 간단하게 정의해줌 하단 작성
 record Person (String name, int age, Address address) {};
@@ -36,12 +38,27 @@ public class HelloWorldConfiguration {
 		return new Person(name, age, address3);
 	}
 	
+	@Bean // 파라미터를 이용해 접근
+	@Primary
+	public Person person4Parameter(String name, int age, Address address) { 
+		// name, age, address2
+		return new Person(name, age, address);
+	}
+	
+	@Bean 
+	public Person person5Qualifier(String name, int age, @Qualifier("address3qualifier")Address address) { 
+		// name, age, address2
+		return new Person(name, age, address);
+	}
+	
 	@Bean(name = "address2") // 빈 네임을 사용자 임의 지정할 수 있음
+	@Primary				 // 
 	public Address address() {
 		return new Address("Baker Street", "London");
 	}
 	
 	@Bean(name = "address3") // 빈 네임을 사용자 임의 지정할 수 있음
+	@Qualifier("address3qualifier")	// 한정자 : 의존성 주입에서 특정 빈을 명시적으로 지정할 때
 	public Address address3() {
 		return new Address("Motinagar", "Hyderabad");
 	}

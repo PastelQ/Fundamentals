@@ -1,5 +1,7 @@
 package com.in28minutes.learnspringframework;
 
+import java.util.Arrays;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class App02HelloWorldSpring {
@@ -15,7 +17,7 @@ public class App02HelloWorldSpring {
 		
 		// 2. Spring FW가 관리할 객체 설정하기
 		// HelloWorldConfiguration에 @Configuration 사용
-		// name 메서드에 @Bean 사용
+		// name 메서드에 @Bean 사용 
 		
 		// 3. Spring이 관리하는 Bean들을 검색(메서드 명으로 검색)
 		System.out.println(context.getBean("name"));
@@ -24,6 +26,10 @@ public class App02HelloWorldSpring {
 		System.out.println(context.getBean("person2MethodCall"));
 		System.out.println(context.getBean("person3Parameter"));
 		System.out.println(context.getBean("address2")); // address2로 지정
-		//System.out.println(context.getBean(Address.class)); // 빈 유형으로 가져오기 / 여기선 클래스 타입
+		System.out.println(context.getBean(Person.class)); // 빈 유형으로 가져오기 / 여기선 클래스 타입
+		System.out.println(context.getBean(Address.class)); // 빈 유형으로 가져오기 / 여기선 클래스 타입
+		System.out.println(context.getBean("person5Qualifier"));
+		
+		// Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 	}
 }
