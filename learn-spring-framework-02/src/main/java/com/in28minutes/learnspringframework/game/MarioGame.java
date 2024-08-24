@@ -1,5 +1,10 @@
 package com.in28minutes.learnspringframework.game;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+@Primary	// Auto-wired할 여러 개의 빈이 후보일 경우 우선권을 줌
 public class MarioGame implements GamingConsole{
 
 	public void up() {
