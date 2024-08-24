@@ -17,10 +17,13 @@ public class App02HelloWorldSpring {
 		// HelloWorldConfiguration에 @Configuration 사용
 		// name 메서드에 @Bean 사용
 		
-		// 3. Spring이 관리하는 Bean들을 검색(메서드 명으로 검색)\
+		// 3. Spring이 관리하는 Bean들을 검색(메서드 명으로 검색)
 		System.out.println(context.getBean("name"));
 		System.out.println(context.getBean("age"));
 		System.out.println(context.getBean("person"));
-		System.out.println(context.getBean("address"));
+		System.out.println(context.getBean("person2MethodCall"));
+		System.out.println(context.getBean("person3Parameter"));
+		System.out.println(context.getBean("address2")); // address2로 지정
+		//System.out.println(context.getBean(Address.class)); // 빈 유형으로 가져오기 / 여기선 클래스 타입
 	}
 }

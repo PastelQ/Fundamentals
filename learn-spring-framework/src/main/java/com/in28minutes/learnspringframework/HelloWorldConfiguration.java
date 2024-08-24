@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 // record : 불변 데이터 객체를 간단하게 정의해줌 하단 작성
-record Person (String name, int age) {};
+record Person (String name, int age, Address address) {};
 record Address (String firstLine, String city) {};
 
 @Configuration // Spring이 관리하는 에너테이션 (빈 관리)
@@ -22,12 +22,28 @@ public class HelloWorldConfiguration {
 	
 	@Bean
 	public Person person() {
-		return new Person("Ravi", 20);
+		return new Person("Ravi", 20, new Address("Main Street", "Utrecht"));
 	}
 	
-	@Bean
+	@Bean // 메서드를 호출하여 접근
+	public Person person2MethodCall() {
+		return new Person(name(), age(), address());
+	}
+	
+	@Bean // 파라미터를 이용해 접근
+	public Person person3Parameter(String name, int age, Address address3) { 
+		// name, age, address2
+		return new Person(name, age, address3);
+	}
+	
+	@Bean(name = "address2") // 빈 네임을 사용자 임의 지정할 수 있음
 	public Address address() {
 		return new Address("Baker Street", "London");
+	}
+	
+	@Bean(name = "address3") // 빈 네임을 사용자 임의 지정할 수 있음
+	public Address address3() {
+		return new Address("Motinagar", "Hyderabad");
 	}
 }
 
