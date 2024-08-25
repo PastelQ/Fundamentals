@@ -32,3 +32,21 @@
  
 ### Autowiring : 스프링이 Bean의 의존성을 자동으로 해결하고 주입하는 과정
  - @Autowired 에너테이션을 사용하여 필드, 생성자, 메서드 등에 의존성을 주입할 수 있음
+
+
+# @Component와 @Bean 비교하기
+## @Component
+- `Where` 모든 자바 클래스에서 사용 가능
+- `Ease of use` 어노테이션 추가만으로 간편하게 빈을 정의할 수 있음
+- `Auto-wiring` 필드, 세터 메서드, 생성자 주입을 통해 자동으로 의존성 주입
+- `Who creates beans` 스프링 프레임워크가 빈 생성 및 관리
+- `Recommended For` @Component가 더 권장(에너테이션으로 간편하게 빈 생성 및 해당 의존성을 자동으로 관리하기 때문)
+
+## @Bean
+- `Where` 특정 메서드에 적용(일반적으로 Spring Configuration 클래스 메서드)
+- `Ease of use` 대비해 조금 더 복잡함(빈 생성 로직을 메서드에 작성해야 함)
+- `Auto-wiring` 특정 메서드 호출 혹은 메서드 매개변수를 이용해 의존성 주입
+- `Who creates beans` 개발자가 Bean 생성 코드를 작성해야 함
+- `Recommended For` Component가 주로 사용되지만 Bean이 자주 사용되는 상황은 있음
+1. 제 3자 라이브러리 Bean을 인스턴스화 할때 ex.SpringSecurity
+2. Bean을 생성하기 전에 수행해야 하는 비즈니스 로직이 많을 경우
