@@ -1,4 +1,4 @@
-package chap11_basicJavaAPI.sec01_javalangPackage.exam01_equals;
+package chap11_basicJavaAPI.sec01_javalangPackage.exam01_objectClassEquals;
 
 /** 실행 클래스 **/
 public class MemberExample {

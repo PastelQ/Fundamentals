@@ -1,4 +1,4 @@
-package chap11_basicJavaAPI.sec01_javalangPackage.exam01_equals;
+package chap11_basicJavaAPI.sec01_javalangPackage.exam01_objectClassEquals;
 
 // java.lang 패키지 : 자바 프로그램의 기본적인 클래스를 담고 있는 패키지
 // -> java.lang 패키지의 클래스, 인터페이스는 import 없이 사용 가능(ex.System / String)
