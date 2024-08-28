@@ -1,4 +1,4 @@
-package chap11_basicJavaAPI.sec01_javalangPackage.exam02_hashoCode;
+package chap11_basicJavaAPI.sec01_javalangPackage.exam02_hashCode;
 
 import java.util.HashMap;
 

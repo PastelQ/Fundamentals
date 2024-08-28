@@ -1,4 +1,4 @@
-package chap11_basicJavaAPI.sec01_javalangPackage.exam02_hashoCode;
+package chap11_basicJavaAPI.sec01_javalangPackage.exam02_hashCode;
 
 // 객체 해시코드(hashCode()) : 객체를 식별하는 하나의 정수값
 // 객체의 메모리 번지를 이용해 해시코드를 만들어 리턴하기 때문에 객체마다 다른 값을 가지고 있음
