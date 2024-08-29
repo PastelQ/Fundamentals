@@ -9,7 +9,7 @@ import chap06_class.sec02_field.exam01_fieldDeclaration.Car;
 /* 프로그램에서 Class 객체 얻는 3가지 방법
  1. Class clazz = 클래스명.class 		 				> 클래스로부터 얻는 방법
  2. Class clazz = Class.forName("패키지...클래스명")	> 클래스로부터 얻는 방법
- 3. 				> 객체로부터 얻는 방법 */
+ 3. Class clazz = 참조변수.getClass(); 				> 객체로부터 얻는 방법 */
 
 public class ClassExample {
 
@@ -23,7 +23,7 @@ public class ClassExample {
 		
 		// 3. Class clazz = 참조변수.getClass();(객체로부터 얻는 방법)
 		// Car car = new Car();
-		// Class calzz = car.getClass();
+		// Class clazz = car.getClass();
 		
 		// 출력 방법
 		System.out.println(clazz.getName());		// 클래스 전체 이름(패키지 포함)
