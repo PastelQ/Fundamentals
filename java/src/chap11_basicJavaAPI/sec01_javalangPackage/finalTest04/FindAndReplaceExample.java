@@ -7,8 +7,10 @@ public class FindAndReplaceExample {
 	public static void main(String[] args) {
 		
 		String str = "모든 프로그램은 자바 언어로 개발될 수 있다.";
+		// 해당 문자열 검색
 		int index = str.indexOf("자바");
 		
+		// indexOf로 검색되지 않으면 -1을 반환하는 특성으로 포함 여부 확인
 		if(index == -1) {
 			System.out.println("\"자바\" 문자열이 포함되어 있지 않습니다.");
 		} else {
