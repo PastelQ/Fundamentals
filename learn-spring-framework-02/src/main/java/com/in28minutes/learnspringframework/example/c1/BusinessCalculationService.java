@@ -2,10 +2,10 @@ package com.in28minutes.learnspringframework.example.c1;
 
 import java.util.Arrays;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+// @Component
+@Service // 어노테이션한 클래스에 비즈니스 논리가 있을 경우 서비스를 사용
 public class BusinessCalculationService {
 
 	private DataService dataService;
