@@ -12,7 +12,7 @@ public class WriteExample {
 
 	public static void main(String[] args) throws Exception{
 		// 데이터 도착지를 해당 경로로 하는 바이트 기반 파일 출력 스트림 생성
-		OutputStream os = new FileOutputStream("C:/icanjava/StudyWorkSpace/javaIO/test1.db");
+		OutputStream os = new FileOutputStream("C:/icanjava/StudyWorkSpace/javaIO/test3.db");
 		
 		byte[] array = { 10, 20, 30, 40, 50 };
 		
