@@ -6,7 +6,8 @@ name: Sync Repository
   # branches: 어떤 브랜치에서 Push가 발생해야 Workflow가 실행될지 정의
 on:
   push:
-    branches: master # 모든 하위 Repository의 기본 브랜치
+    # 모든 하위 Repository의 기본 브랜치
+    branches: master
 
 
 # jobs: 실행할 작업을 정의
