@@ -59,18 +59,32 @@ jobs:
       # 상위 / 하위 동기화 및 Subtree Pull
       - name: Sync and Pull
         run: |
+          echo "fundamentals 디렉터리 변경"
           cd fundamentals
+
+          echo "Java Remote 추가"
           git remote add java ../java
           git fetch java
+
+          echo "Java pull"
           git subtree pull --prefix=Java ../java master
 
+          echo "Spring Remote 추가"
           git remote add spring ../spring
           git fetch spring
+
+          echo "Spring pull"
           git subtree pull --prefix=Spring ../spring master
 
+          echo "DataStructure Remote 추가"
           git remote add dataStructure ../dataStructure
           git fetch dataStructure
+
+          echo "DataStructure pull"
           git subtree pull --prefix=DataStructure ../dataStructure master
 
+          echo "Commit"
           git commit -m "하위 Repository와 동기화 완료" || echo "커밋 변경 사항 없음(Commit Fail)"
+
+          echo "Pushing to origin"
           git push origin main
