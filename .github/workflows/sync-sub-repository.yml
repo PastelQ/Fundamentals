@@ -1,0 +1,75 @@
+# Workflow 이름 설정(Github Action의 인터페이스에서 Workflow 식별하는데 사용)
+name: Sync Repository
+
+# on: 해당 Workflow를 트리거하는 이벤트 정의
+  # push: Repository에 커밋이 푸시될 때 Workflow 실행
+  # branches: 어떤 브랜치에서 Push가 발생해야 Workflow가 실행될지 정의
+on:
+  push:
+    branches: master # 모든 하위 Repository의 기본 브랜치
+
+
+# jobs: 실행할 작업을 정의
+  # sync: 작업의 이름 / 나중에 쉽게 참조할 수 있도록 붙임
+  # runs-on: 이 작업이 실행될 환경 정의(ubuntu-latest: 최신 우분투 환경에서 실행)
+  # steps: 이 작업에서 수행할 개별 단계 나열
+    # - name: 단계 이름(사용자 지정)
+    # uses: 사용할 Github Action(actions/checkout@v2: Repository를 Checkout하는 액션)
+    # with: Checkout할 Repository의 세부 정보 설정
+      # repository: 하위 Repository를 지정
+      # token: 인증을 위한 토큰 / 'secrets.GITHUB_TOKEN'을 사용하여 GitHub에서 자동으로 생성되는 시크릿 키를 사용
+      # path: 가상 환경 내에서 Repository를 어디에 Clone할 지 지정하는 경로
+jobs: 
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      # 상위 Repository Checkout
+      - name: Checkout Fundamentals
+        uses: actions/checkout@v2
+        with:
+          repository: PastelQ/Fundamentals
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: fundamentals
+      
+      # Java Repository Checkout
+      - name: Checkout Java
+        uses: actions/checkout@v2
+        with:
+          repository: PastelQ/Java
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: java
+
+      # Spring Repository Checkout
+      - name: Checkout Spring
+        uses: actions/checkout@v2
+        with:
+          repository: PastelQ/Spring
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: spring
+      
+      # DataStructure Repository Checkout
+      - name: Checkout DataStructure
+        uses: actions/checkout@v2
+        with:
+          repository: PastelQ/DataStructure
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: dataStructure
+      
+      # 상위 / 하위 동기화 및 Subtree Pull
+      - name: Sync and Pull
+        run: |
+          cd fundamentals
+          git remote add java ../java
+          git fetch java
+          git subtree pull --prefix=Java ../java master
+
+          git remote add spring ../spring
+          git fetch spring
+          git subtree pull --prefix=Spring ../spring master
+
+          git remote add dataStructure ../dataStructure
+          git fetch dataStructure
+          git subtree pull --prefix=DataStructure ../dataStructure master
+
+          git commit -m "하위 Repository와 동기화 완료" || echo "커밋 변경 사항 없음(Commit Fail)"
+          git push origin main
