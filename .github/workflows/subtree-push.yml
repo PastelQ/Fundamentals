@@ -38,10 +38,11 @@ jobs:
         git config --global user.email "a0941@naver.com"
         git config --global user.name "PastelQ"
 
-    # 3. 부모 리포지토리의 master 브랜치 체크아웃
-    - name: Checkout master branch
+    # 3. 부모 리포지토리의 브랜치 정보 Fetch 및 master 브랜치 체크아웃
+    - name: Fetch and Checkout master branch
       run: |
         cd parent_repo
+        git fetch --all  # 모든 브랜치 정보를 업데이트
         git checkout master  # 명시적으로 master 브랜치 체크아웃
 
     # 4. 자식 리포지토리와 히스토리 병합 (충돌 시 자식 리포지토리로 덮어쓰기)
