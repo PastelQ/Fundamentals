@@ -36,7 +36,7 @@ jobs:
           cd parent_repo
           git remote add child https://github.com/PastelQ/Java.git  # 자식 리포지토리 URL
           git fetch child
-          git subtree pull --prefix=java child master  # 자식 리포지토리의 변경 사항을 부모 리포지토리로 병합
+          git subtree pull --prefix=Java child master  # 자식 리포지토리의 변경 사항을 부모 리포지토리로 병합
 
       - name: Push to parent repository
         run: |
