@@ -1,0 +1,46 @@
+# Workflow 이름 설정(Github Action의 인터페이스에서 Workflow 식별하는데 사용)
+name: Push subtree
+
+# on: 해당 Workflow를 트리거하는 이벤트 정의
+  # push: Repository에 커밋이 푸시될 때 Workflow 실행
+  # branches: 어떤 브랜치에서 Push가 발생해야 Workflow가 실행될지 정의
+on:
+  push:
+    branches: master # 자식 Repository에서 사용하는 브렌치
+
+
+# jobs: 실행할 작업을 정의
+  # taskName(push-to-parents): 작업의 이름 / 나중에 쉽게 참조할 수 있도록 붙임(사용자 정의)
+  # runs-on: 이 작업이 실행될 환경 정의(ubuntu-latest: 최신 우분투 환경에서 실행)
+  # steps: 이 작업에서 수행할 개별 단계 나열
+    # - name: 단계 이름(사용자 지정)
+    # uses: 사용할 Github Action(actions/checkout@v2: Repository를 Checkout하는 액션)
+    # with: Checkout할 Repository의 세부 정보 설정
+      # repository: Repository를 지정 ({{ secrets.github.repository}} : 현재 실행 중인 리포진토리 경로)
+      # token: 인증을 위한 토큰 / 'secrets.GITHUB_TOKEN'을 사용하여 GitHub에서 자동으로 생성되는 시크릿 키를 사용
+      # path: 가상 환경 내에서 Repository를 어디에 Clone할 지 지정하는 경로
+jobs: 
+  push-to-parents:
+    runs-on: ubuntu-latest
+    steps:
+      # 현재 Repository 체크아웃(하위 Repository)
+      - name: Checkout this repository
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ github.repository }}
+          path: repo
+      
+      # 하위 Repository 변경 사항을 부모 Repository로 Push
+      # --prefix=Java : 하위 -> 상위로 푸시할 디렉터리 지정하는 옵션(Java 폴더)
+      # https://github.com/PastelQ/Fundamentals.git main : 상위 Repository URL / 브랜치
+      # 상위 Repository에 Push하려면 권한이 필요 Personal Access Token(PAT 사용) 발급 및 사용
+      # Personal Access Token을 사용해 부모 리포지토리로 푸시할 때는 인증이 포함된 URL 사용
+      - name: Push parents repository
+        env:
+          PERSONAL_ACCESS_TOKEN:  ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: |
+          set -x
+          cd repo
+          git remote add parent https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/PastelQ/Fundamentals.git
+          git fetch parent
+          git subtree push --prefix=java parent main
