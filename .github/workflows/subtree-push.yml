@@ -31,6 +31,12 @@ jobs:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # 부모 리포지토리로 접근하기 위한 PAT
           path: parent_repo  # 부모 리포지토리를 가상 환경의 폴더로 클론
 
+      # Git 사용자 정보 설정 (커밋 생성 문제 해결)
+      - name: Setup git user info
+        run: |
+          git config --global user.email "a0941@naver.com"
+          git config --global user.name "PastelQ"
+
       # 자식 리포지토리와 히스토리 병합
       - name: Merge child repository history
         run: |
