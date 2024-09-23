@@ -34,15 +34,14 @@ jobs:
       # 하위 Repository 변경 사항을 부모 Repository로 Push
       # --prefix=Java : 하위 -> 상위로 푸시할 디렉터리 지정하는 옵션(Java 폴더)
       # https://github.com/PastelQ/Fundamentals.git main : 상위 Repository URL / 브랜치
+      # 상위 Repository에 Push하려면 권한이 필요 Personal Access Token(PAT 사용) 발급 및 사용
+      # Personal Access Token을 사용해 부모 리포지토리로 푸시할 때는 인증이 포함된 URL 사용
       - name: Push parents repository
-        # 상위 Repository에 Push하려면 권한이 필요 Personal Access Token(PAT 사용) 발급 및 사용
-        # Personal Access Token을 사용해 부모 리포지토리로 푸시할 때는 인증이 포함된 URL 사용
         env:
-          PERSONAL_ACCESS_TOKEN:  ${{ secrets.PERSONAL_ACCESS_TOKEN }} # PAT 사용
-        # run: | : 하기 명령문 전체 실행
+          PERSONAL_ACCESS_TOKEN:  ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         run: |
           set -x
           cd repo
           git remote add parent https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/PastelQ/Fundamentals.git
           git fetch parent
-          git subtree push --prefix=java parent main
+          git subtree push parent main
