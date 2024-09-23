@@ -23,7 +23,8 @@ jobs:
   push-to-parents:
     runs-on: ubuntu-latest
     steps:
-    # 부모 리포지토리 체크아웃
+    
+    # 1. 부모 리포지토리 체크아웃
     - name: Checkout the parent repository
       uses: actions/checkout@v2
       with:
@@ -31,27 +32,33 @@ jobs:
         token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # 부모 리포지토리로 접근하기 위한 PAT
         path: parent_repo  # 부모 리포지토리를 가상 환경의 폴더로 클론
 
-    # Git 사용자 정보 설정
+    # 2. Git 사용자 정보 설정
     - name: Setup git user info
       run: |
         git config --global user.email "a0941@naver.com"
         git config --global user.name "PastelQ"
 
-    # 자식 리포지토리와 히스토리 병합 (충돌 시 자식 리포지토리로 덮어쓰기)
+    # 3. 부모 리포지토리의 master 브랜치 체크아웃
+    - name: Checkout master branch
+      run: |
+        cd parent_repo
+        git checkout master  # 명시적으로 master 브랜치 체크아웃
+
+    # 4. 자식 리포지토리와 히스토리 병합 (충돌 시 자식 리포지토리로 덮어쓰기)
     - name: Merge child repository history
       run: |
         cd parent_repo
         git remote add child https://github.com/PastelQ/DataStructure.git  # 자식 리포지토리 URL
         git fetch child
-        git merge -X theirs child/master --allow-unrelated-histories # 충돌 발생 시 자식 리포지토리의 변경 사항으로 덮어쓰기
+        git merge -X theirs child/master --allow-unrelated-histories  # 충돌 발생 시 자식 리포지토리의 변경 사항으로 덮어쓰기
 
-    # 서브트리 Pull
+    # 5. 서브트리 Pull
     - name: Pull from child repository
       run: |
         cd parent_repo
         git subtree pull --prefix=DataStructure child master  # 서브트리 병합
 
-    # 부모 리포지토리로 Push
+    # 6. 부모 리포지토리의 master 브랜치로 Push
     - name: Push to parent repository
       run: |
         cd parent_repo
