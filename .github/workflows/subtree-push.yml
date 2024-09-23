@@ -44,4 +44,4 @@ jobs:
           cd repo
           git remote add parent https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/PastelQ/Fundamentals.git
           git fetch parent
-          git subtree push parent main
+          git subtree push --prefix=. parent main
