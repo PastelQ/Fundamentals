@@ -36,9 +36,11 @@ jobs:
       # https://github.com/PastelQ/Fundamentals.git main : 상위 Repository URL / 브랜치
       - name: Push parents repository
         # 상위 Repository에 Push하려면 권한이 필요 Personal Access Token(PAT 사용) 발급 및 사용
+        # Personal Access Token을 사용해 부모 리포지토리로 푸시할 때는 인증이 포함된 URL 사용
         env:
           PERSONAL_ACCESS_TOKEN:  ${{ secrets.PERSONAL_ACCESS_TOKEN }} # PAT 사용
         # run: | : 하기 명령문 전체 실행
         run: |
           cd repo
+          git remote add parent https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/PastelQ/Fundamentals.git
           git subtree push --prefix=java https://github.com/PastelQ/Fundamentals.git main
