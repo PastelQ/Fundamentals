@@ -38,4 +38,4 @@ jobs:
         # run: | : 하기 명령문 전체 실행
         run: |
           cd repo
-          git subtree push --prefix=Java https://github.com/PastelQ/Fundamentals.git main
+          git subtree push --prefix=java https://github.com/PastelQ/Fundamentals.git main
