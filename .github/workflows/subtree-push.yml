@@ -55,4 +55,4 @@ jobs:
     - name: Push to parent repository
       run: |
         cd parent_repo
-        git push origin main  # 부모 리포지토리의 main 브랜치로 푸시
+        git push origin master  # 부모 리포지토리의 master 브랜치로 푸시
