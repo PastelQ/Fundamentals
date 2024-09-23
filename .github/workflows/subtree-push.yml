@@ -37,7 +37,7 @@ jobs:
       - name: Push parents repository
         # 상위 Repository에 Push하려면 권한이 필요 Personal Access Token(PAT 사용) 발급 및 사용
         env:
-          GITHUB_TOKEN:  ${{ secrets.PERSONAL_ACCESS_TOKEN }} # PAT 사용
+          PERSONAL_ACCESS_TOKEN:  ${{ secrets.PERSONAL_ACCESS_TOKEN }} # PAT 사용
         # run: | : 하기 명령문 전체 실행
         run: |
           cd repo
