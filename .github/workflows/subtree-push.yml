@@ -43,7 +43,7 @@ jobs:
         cd parent_repo
         git remote add child https://github.com/PastelQ/DataStructure.git  # 자식 리포지토리 URL
         git fetch child
-        git merge -X theirs child/master --allow-unrelated-histories  # 충돌 발생 시 자식 리포지토리의 변경 사항으로 덮어쓰기
+        git merge -X theirs child/master # 충돌 발생 시 자식 리포지토리의 변경 사항으로 덮어쓰기
 
     # 서브트리 Pull
     - name: Pull from child repository
