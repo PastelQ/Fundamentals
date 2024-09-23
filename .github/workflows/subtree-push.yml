@@ -23,6 +23,7 @@ jobs:
   push-to-parents:
     runs-on: ubuntu-latest
     steps:
+      steps:
       # 부모 리포지토리 체크아웃
       - name: Checkout the parent repository
         uses: actions/checkout@v2
@@ -37,21 +38,13 @@ jobs:
           git config --global user.email "a0941@naver.com"
           git config --global user.name "PastelQ"
 
-      # 자식 리포지토리와 히스토리 병합
+      # 자식 리포지토리와 히스토리 병합 (충돌 시 자식 리포지토리로 덮어쓰기)
       - name: Merge child repository history
         run: |
           cd parent_repo
           git remote add child https://github.com/PastelQ/Java.git  # 자식 리포지토리 URL
           git fetch child
-          git merge child/master --allow-unrelated-histories || true  # 충돌이 발생해도 무시
-
-      # 충돌 해결 (자식 리포지토리로 덮어쓰기)
-      - name: Resolve merge conflicts
-        run: |
-          cd parent_repo
-          git checkout --theirs README.md  # 충돌 파일을 자식 리포지토리로 덮어쓰기
-          git add README.md
-          git commit -m "Resolved conflict by accepting changes from child repo"
+          git merge -X theirs child/master --allow-unrelated-histories  # 충돌 발생 시 자식 리포지토리의 변경 사항으로 덮어쓰기
 
       # 서브트리 Pull
       - name: Pull from child repository
