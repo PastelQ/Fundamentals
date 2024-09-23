@@ -41,6 +41,8 @@ jobs:
           PERSONAL_ACCESS_TOKEN:  ${{ secrets.PERSONAL_ACCESS_TOKEN }} # PAT 사용
         # run: | : 하기 명령문 전체 실행
         run: |
+          set -x
           cd repo
           git remote add parent https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/PastelQ/Fundamentals.git
+          git fetch parent
           git subtree push --prefix=java parent main
