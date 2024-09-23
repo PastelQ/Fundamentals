@@ -31,7 +31,7 @@ jobs:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # 부모 리포지토리로 접근하기 위한 PAT
           path: parent_repo  # 부모 리포지토리를 가상 환경의 폴더로 클론
 
-      # Git 사용자 정보 설정 (커밋 생성 문제 해결)
+      # Git 사용자 정보 설정
       - name: Setup git user info
         run: |
           git config --global user.email "a0941@naver.com"
@@ -43,7 +43,15 @@ jobs:
           cd parent_repo
           git remote add child https://github.com/PastelQ/Java.git  # 자식 리포지토리 URL
           git fetch child
-          git merge child/master --allow-unrelated-histories  # 자식 리포지토리와 히스토리 병합
+          git merge child/master --allow-unrelated-histories || true  # 충돌이 발생해도 무시
+
+      # 충돌 해결 (자식 리포지토리로 덮어쓰기)
+      - name: Resolve merge conflicts
+        run: |
+          cd parent_repo
+          git checkout --theirs README.md  # 충돌 파일을 자식 리포지토리로 덮어쓰기
+          git add README.md
+          git commit -m "Resolved conflict by accepting changes from child repo"
 
       # 서브트리 Pull
       - name: Pull from child repository
