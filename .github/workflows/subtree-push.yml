@@ -23,24 +23,22 @@ jobs:
   push-to-parents:
     runs-on: ubuntu-latest
     steps:
-      # 현재 Repository 체크아웃(하위 Repository)
-      - name: Checkout this repository
+      # 부모 리포지토리 체크 아웃
+      - name: Checkout the parent repository
         uses: actions/checkout@v2
         with:
-          repository: ${{ github.repository }}
-          path: repo
-      
-      # 하위 Repository 변경 사항을 부모 Repository로 Push
-      # --prefix=Java : 하위 -> 상위로 푸시할 디렉터리 지정하는 옵션(Java 폴더)
-      # https://github.com/PastelQ/Fundamentals.git main : 상위 Repository URL / 브랜치
-      # 상위 Repository에 Push하려면 권한이 필요 Personal Access Token(PAT 사용) 발급 및 사용
-      # Personal Access Token을 사용해 부모 리포지토리로 푸시할 때는 인증이 포함된 URL 사용
-      - name: Push parents repository
-        env:
-          PERSONAL_ACCESS_TOKEN:  ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repository: PastelQ/Fundamentals  # 부모 리포지토리
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # 부모 리포지토리로 접근하기 위한 PAT
+          path: parent_repo
+
+      - name: Pull from child repository
         run: |
-          set -x
-          cd repo
-          git remote add parent https://x-access-token:${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/PastelQ/Fundamentals.git
-          git fetch parent
-          git subtree push --prefix=java parent main
+          cd parent_repo
+          git remote add child https://github.com/PastelQ/Java.git  # 자식 리포지토리 URL
+          git fetch child
+          git subtree pull --prefix=java child master  # 자식 리포지토리의 변경 사항을 부모 리포지토리로 병합
+
+      - name: Push to parent repository
+        run: |
+          cd parent_repo
+          git push origin main  # 부모 리포지토리로 푸시
