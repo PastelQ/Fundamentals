@@ -20,4 +20,5 @@ JAVA 관련 기초 공부 Parents Repository
 - History를 그대로 유지하게 함으로, Commit 내역 및 잔디를 보존할 수 있음
 
 ### 참고 자료
+- 서브트리 관련 블로그
 https://soy3on.tistory.com/200
